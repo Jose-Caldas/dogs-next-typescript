@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 import Image from 'next/image'
 
 export default function Header() {
-  const user = true // todo logic to user is Logged
+  const user = false // todo logic to user is Logged
 
   return (
     <header className={styles.header}>

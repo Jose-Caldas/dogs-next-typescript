@@ -1,7 +1,7 @@
 export default async function CriarPage() {
   return (
-    <main>
+    <section className="container mainContainer">
       <h1 className="title">Página Criar</h1>
-    </main>
+    </section>
   )
 }

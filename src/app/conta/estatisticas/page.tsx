@@ -1,7 +1,7 @@
 export default function EstatisticasPage() {
   return (
-    <main>
+    <section className="container mainContainer">
       <h1>Estatísticas</h1>
-    </main>
+    </section>
   )
 }

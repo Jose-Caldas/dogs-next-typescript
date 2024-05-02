@@ -95,7 +95,7 @@ a {
   min-height: calc(100vh + 10rem);
 }
 
-.AppBody {
+.AppMain {
   flex: 1;
 }
 
