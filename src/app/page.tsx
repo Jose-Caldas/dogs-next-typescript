@@ -1,10 +1,7 @@
-import Menu from '@/components/menu'
-
 export default function Home() {
   return (
     <main>
-      <h1 className="title">Dogs Next</h1>
-      <Menu />
+      <h1>Home</h1>
     </main>
   )
 }
