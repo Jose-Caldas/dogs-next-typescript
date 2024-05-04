@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import FeedFotos from './feedPhotos'
 import { Photos } from '@/types'
 
