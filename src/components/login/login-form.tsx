@@ -3,9 +3,13 @@
 import login from '@/actions/login'
 import { useFormState, useFormStatus } from 'react-dom'
 import Button from '@/components/forms/Button'
+import Input from '@/components/forms/Input'
+import ErrorMessage from '../helper/ErrorMessage'
+import React from 'react'
 
 function FormButton() {
   const { pending } = useFormStatus()
+
   return (
     <>
       {pending ? (
@@ -23,14 +27,18 @@ export default function LoginForm() {
     error: '',
     data: null,
   })
+
+  React.useEffect(() => {
+    if (state.ok) window.location.href = '/conta'
+  }, [state.ok])
+
   return (
     <>
       <form action={action}>
-        <input type="text" placeholder="usuário" name="username" />
-        <input type="password" placeholder="senha" name="password" />
+        <Input label="Usuário" type="text" name="username" />
+        <Input label="Senha" type="password" name="password" />
         <FormButton />
-        <p>{state.error}</p>
-        {state.ok && <p>Usuário Válido</p>}
+        <ErrorMessage errorMessage={state.error} />
       </form>
     </>
   )
