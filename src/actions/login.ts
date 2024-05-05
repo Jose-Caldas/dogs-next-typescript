@@ -9,7 +9,7 @@ export default async function login(state: {}, formData: FormData) {
   const password = formData.get('password') as string | null
 
   try {
-    if (!username && !password) throw new Error('Preencha os dados.')
+    if (!username || !password) throw new Error('Preencha os dados.')
 
     const { url } = TOKEN_POST()
 

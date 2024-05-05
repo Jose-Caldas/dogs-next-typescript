@@ -1,3 +1,10 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Dogs | Perdeu a senha',
+  description: 'Recupere a sua senha',
+}
+
 export default async function PerdeuPage() {
   return (
     <main>

@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './Login-form.module.css'
+import styles from './LoginForm.module.css'
 
 import login from '@/actions/login'
 import { useFormState, useFormStatus } from 'react-dom'

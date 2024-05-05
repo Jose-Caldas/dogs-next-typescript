@@ -1,7 +1,18 @@
-export default async function CriarPage() {
+import LoginCriarForm from '@/components/login/LoginCriarForm'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Dogs | Crie sua conta',
+  description: 'Criar sua conta no site Dogs',
+}
+
+function handleSubmit() {}
+
+export default async function LoginCriarPage() {
   return (
-    <section className="container mainContainer">
-      <h1 className="title">Página Criar</h1>
-    </section>
+    <div className="animeLeft">
+      <h1 className="title">Cadastre-se</h1>
+      <LoginCriarForm />
+    </div>
   )
 }
