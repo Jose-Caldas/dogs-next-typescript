@@ -13,3 +13,10 @@ export type Photo = {
 export type Photos = {
   photos: Photo[]
 }
+
+export type User = {
+  id: number
+  nome: string
+  username: string
+  email: string
+}
