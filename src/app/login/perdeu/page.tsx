@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import LoginPerdeuForm from '@/components/login/LoginPerdeuForm'
 
 export const metadata: Metadata = {
   title: 'Dogs | Perdeu a senha',
@@ -7,8 +8,9 @@ export const metadata: Metadata = {
 
 export default async function PerdeuPage() {
   return (
-    <main>
-      <h1>Página Perdeu</h1>
-    </main>
+    <div className="animeLeft">
+      <h1 className="title">Perdeu a senha?</h1>
+      <LoginPerdeuForm />
+    </div>
   )
 }
