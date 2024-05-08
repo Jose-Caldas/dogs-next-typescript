@@ -1,7 +1,7 @@
 export default function PostarPage() {
   return (
-    <main>
+    <section className="animeLeft">
       <h1>postar</h1>
-    </main>
+    </section>
   )
 }

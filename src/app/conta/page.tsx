@@ -6,8 +6,8 @@ export default function ContaPage() {
   const { user } = useUser()
 
   return (
-    <section className="container mainContainer">
-      <h1 className="title">Página Conta: {user?.nome}</h1>
+    <section className="animeLeft">
+      <h1>Conta: {user?.nome}</h1>
     </section>
   )
 }
