@@ -8,8 +8,10 @@ import AdicionarIcon from '@/icons/AdicionarIcon'
 import EstatisticasIcon from '@/icons/EstatisticasIcon'
 import FeeIcon from '@/icons/FeedIcon'
 import SairIcon from '@/icons/SairIcon'
+import logout from '@/actions/logout'
 
 import styles from './ContaHeader.module.css'
+import { useUser } from '@/context/userContext'
 
 function getTitle(pathname: string) {
   switch (pathname) {
@@ -32,6 +34,13 @@ export default function ContaHeader() {
   React.useEffect(() => {
     setMobileMenu(false)
   }, [pathname])
+
+  const { setUserState } = useUser()
+
+  async function handleLogout() {
+    await logout()
+    setUserState(null)
+  }
 
   return (
     <header className={styles.header}>
@@ -75,7 +84,7 @@ export default function ContaHeader() {
           <AdicionarIcon />
           {mobile && 'Adicionar Foto'}
         </Link>
-        <button onClick={() => {}} title="Sair">
+        <button onClick={handleLogout} title="Sair">
           <SairIcon />
           {mobile && 'Sair'}
         </button>
