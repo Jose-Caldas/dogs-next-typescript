@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from 'react'
 import FeedFotos from './feedPhotos'
 import { Photo } from '@/types'
 import photosGet from '@/actions/photos-get'
+import Loading from '@/components/helper/Loading'
+import styles from './Feed.module.css'
 
 type FeedProps = {
   photos: Photo[]
@@ -66,7 +68,13 @@ export default function Feed({ photos }: FeedProps) {
     <section>
       <div>
         <FeedFotos photos={photosFeed} />
-        {loading && <p>Carregando...</p>}
+        <div className={styles.loadingWrapper}>
+          {infinite ? (
+            loading && <Loading />
+          ) : (
+            <p>Não existem mais postagens.</p>
+          )}
+        </div>
       </div>
     </section>
   )
