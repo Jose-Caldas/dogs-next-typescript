@@ -17,7 +17,7 @@ export default async function ContaPage() {
   return (
     <section className="animeLeft">
       {data?.length ? (
-        <Feed photos={data} />
+        <Feed photos={data} user={user?.username} />
       ) : (
         <div>
           <p

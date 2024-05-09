@@ -1,9 +1,10 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Photos } from '@/types'
 import styles from '../Feed.module.css'
 
-export default async function FeedPhotos({ photos }: Photos) {
+export default function FeedPhotos({ photos }: Photos) {
   return (
     <ul className={`${styles.feed} animeLeft`}>
       {photos.map((photo, i) => (
