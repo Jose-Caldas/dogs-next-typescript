@@ -8,7 +8,7 @@ import { UserContextProvider } from '@/context/userContext'
 import userGet from '@/actions/user-get'
 
 export const metadata: Metadata = {
-  title: 'Dogs Next',
+  title: 'Dogs | Home',
   description: 'Rede social para cachorros.',
 }
 

@@ -1,13 +1,14 @@
-'use client'
+import { Metadata } from 'next'
 
-import { useUser } from '@/context/userContext'
+export const metadata: Metadata = {
+  title: 'Dogs | Minhas Fotos',
+  description: 'Página minha conta e fotos',
+}
 
-export default function ContaPage() {
-  const { user } = useUser()
-
+export default async function ContaPage() {
   return (
     <section className="animeLeft">
-      <h1>Conta: {user?.nome}</h1>
+      <h1>Nenhuma foto ainda adicionada!</h1>
     </section>
   )
 }
