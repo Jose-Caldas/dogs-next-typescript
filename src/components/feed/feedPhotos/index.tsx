@@ -1,6 +1,6 @@
-import { Photos } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Photos } from '@/types'
 import styles from '../Feed.module.css'
 
 export default async function FeedPhotos({ photos }: Photos) {

@@ -20,3 +20,9 @@ export type User = {
   username: string
   email: string
 }
+
+export type PhotosGetParams = {
+  page?: number
+  total?: number
+  user?: 0 | string
+}
