@@ -26,3 +26,15 @@ export type PhotosGetParams = {
   total?: number
   user?: 0 | string
 }
+
+export type Comment = {
+  comment_ID: string
+  comment_post_ID: string
+  comment_author: string
+  comment_content: string
+}
+
+export type PhotoData = {
+  photo: Photo
+  comments: Comment[]
+}
