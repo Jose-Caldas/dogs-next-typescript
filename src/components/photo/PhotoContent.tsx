@@ -2,11 +2,11 @@
 
 import Image from 'next/image'
 import styles from './PhotoContent.module.css'
-// import PhotoComments from './PhotoComments'
 import PhotoDelete from './PhotoDelete'
 import { useUser } from '@/context/userContext'
 import Link from 'next/link'
 import { PhotoData } from '@/types'
+import PhotoComments from './PhotoComments'
 
 type PhotoContentProps = {
   data: PhotoData
@@ -20,7 +20,13 @@ const PhotoContent = ({ data, single }: PhotoContentProps) => {
   return (
     <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
-        <Image src={photo.src} alt={photo.title} width={1000} height={1000} />
+        <Image
+          src={photo.src}
+          alt={photo.title}
+          width={1000}
+          height={1000}
+          priority
+        />
       </div>
       <div className={styles.details}>
         <div>
@@ -41,7 +47,7 @@ const PhotoContent = ({ data, single }: PhotoContentProps) => {
           </ul>
         </div>
       </div>
-      {/* <PhotoComments single={single} id={photo.id} comments={comments} /> */}
+      <PhotoComments single={single} id={photo.id} comments={comments} />
     </div>
   )
 }

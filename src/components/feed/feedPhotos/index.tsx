@@ -16,6 +16,7 @@ export default function FeedPhotos({ photos }: Photos) {
               width={1500}
               height={1500}
               sizes="80vw"
+              priority
             />
             <span className={styles.visualizacao}>{photo.acessos}</span>
           </Link>
