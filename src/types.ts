@@ -38,3 +38,9 @@ export type PhotoData = {
   photo: Photo
   comments: Comment[]
 }
+
+export type StatsData = {
+  id: number
+  title: string
+  acessos: string
+}
