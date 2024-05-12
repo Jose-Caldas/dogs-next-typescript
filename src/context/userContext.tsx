@@ -1,5 +1,7 @@
 'use client'
 
+import logout from '@/actions/logout'
+import validateToken from '@/actions/validate-token'
 import { User } from '@/types'
 import {
   Dispatch,
@@ -7,6 +9,7 @@ import {
   SetStateAction,
   createContext,
   useContext,
+  useEffect,
   useState,
 } from 'react'
 
@@ -24,6 +27,15 @@ type ContextProps = {
 
 export function UserContextProvider({ children, user }: ContextProps) {
   const [userState, setUserState] = useState(user)
+
+  useEffect(() => {
+    async function validate() {
+      const { ok } = await validateToken()
+      if (!ok) await logout()
+    }
+    if (userState) validate()
+  }, [userState])
+
   return (
     <UserContext.Provider value={{ user: userState, setUserState }}>
       {children}
