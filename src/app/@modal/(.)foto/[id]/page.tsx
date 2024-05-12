@@ -2,25 +2,24 @@ import { notFound } from 'next/navigation'
 import photoGet from '@/actions/photo.get'
 import FeedModal from '@/components/feed/feedModal'
 
-type PhotoIdParams = {
+type FotoIdParams = {
   params: {
     id: string
   }
 }
 
-export async function generateMetadata({ params }: PhotoIdParams) {
+export async function generateMetadata({ params }: FotoIdParams) {
   const { data } = await photoGet(params.id)
-  if (!data) return { title: 'Fotos' }
 
+  if (!data) return { titlte: 'Fotos' }
   return {
-    title: `Dogs | ${data.photo.title} `,
+    title: data.photo.title,
   }
 }
 
-export default async function FotoIdPage({ params }: PhotoIdParams) {
+export default async function FotoIdPage({ params }: FotoIdParams) {
   const { data } = await photoGet(params.id)
 
   if (!data) return notFound()
-
   return <FeedModal photo={data} />
 }
