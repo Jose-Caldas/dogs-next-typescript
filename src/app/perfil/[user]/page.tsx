@@ -1,3 +1,6 @@
+import photosGet from '@/actions/photos-get'
+import Feed from '@/components/feed'
+
 type PageParams = {
   params: {
     user: string
@@ -5,10 +8,14 @@ type PageParams = {
 }
 
 export default async function PerfilUserPage({ params }: PageParams) {
+  const { data } = await photosGet({ user: params.user })
+
+  if (!data) return null
+
   return (
-    <main>
-      <h1 className="title">Página Usuário</h1>
-      <h2>Usuário: {params.user}</h2>
-    </main>
+    <section className="container mainContainer">
+      <h1 className="title">{params.user}</h1>
+      <Feed photos={data} user={params.user} />
+    </section>
   )
 }
